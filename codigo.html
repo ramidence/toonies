@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Verification</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        background: #222; 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        padding-top: 20px;
+        font-family: Poppins, sans-serif;
+    }
+
+    .phone {
+        width: 412px;
+        height: 917px;
+        background: #ffff;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        padding: 0;
+    }
+
+    .back-arrow {
+        font-size: 28px;
+        color: #D7632A;
+        padding: 25px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #E7B847;
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 14px;
+        width: 80%;
+        margin: 20px auto;
+        line-height: 23px;
+        text-align: left;
+    }
+
+    .code-boxes {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 50px;
+    }
+
+    .code-boxes input {
+        width: 65px;
+        height: 65px;
+        text-align: center;
+        font-size: 28px;
+        border: 5px solid #E7B847;
+        border-radius: 8px;
+        outline: none;
+        background: white;
+        color: black;
+    }
+
+    .resend {
+        text-align: right;
+        margin-right: 40px;
+        margin-top: 20px;
+        color: #D7632A;
+        font-size: 16px;
+    }
+
+    .btn {
+        background: #E7B847;
+        color: #000;
+        width: 90%;
+        margin: 55px auto;
+        padding: 16px;
+        border-radius: 6px;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        display: block;
+        cursor: pointer;
+    }
+
+    .wave {
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+        width: 412px;
+        height: 761px;
+        z-index: 0; 
+    }
+
+    .phone > *:not(.wave) {
+        position: relative;
+        z-index: 1; 
+    }
+</style>
+</head>
+<body>
+
+<div class="phone">
+    <div class="back-arrow">&#8592;</div>
+    <h2>Code Verification</h2>
+    <p class="text">
+        We have sent a code to your email, please<br>
+        enter it below.
+    </p>
+
+    <div class="code-boxes">
+        <input type="text" maxlength="1" class="code">
+        <input type="text" maxlength="1" class="code">
+        <input type="text" maxlength="1" class="code">
+        <input type="text" maxlength="1" class="code">
+    </div>
+
+    <p class="resend">Send code again</p>
+
+  
+    <button class="btn">Confirm</button>
+
+    <svg class="wave" viewBox="0 0 412 761" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M149 679.355C52.7619 696.355 25.8333 672.018 0 646.5V0H412V690C412 716.262 343.5 771.354 287 757.943C233 752.356 221.5 666.548 149 679.355Z" fill="#001F21"/>
+    </svg>
+</div>
+
+<script>
+    const inputs = document.querySelectorAll(".code");
+
+    inputs.forEach((input, index) => {
+        input.addEventListener("input", () => {
+            if (input.value.length === 1 && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+        });
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Backspace" && input.value === "" && index > 0) {
+                inputs[index - 1].focus();
+            }
+        });
+    });
+
+
+    document.querySelector(".btn").addEventListener("click", () => {
+        window.location.href = "cambio.html";
+    });
+</script>
+
+</body>
+</html>

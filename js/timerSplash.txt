@@ -1,0 +1,15 @@
+<script>
+var timeLeft = 10
+function startTimer(){
+timeLeft --
+if (timeLeft < 0) {
+document.location = 'index.htm';
+}
+minsLeft = Math.floor(timeLeft / 60)
+secsLeft = timeLeft - (minsLeft * 60)
+if (secsLeft < 10){
+secsLeft = '0'; + secsLeft
+}
+window.status = minsLeft +' : '+ secsLeft
+timerID = setTimeout('startTimer()',1000)
+}
