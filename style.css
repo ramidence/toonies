@@ -22,7 +22,7 @@ body{
 
 .signUp{
     background-color: #001F21;
-    background-image: url("../toonie/img/bgSignUp.svg");
+    background-image: url("img/bgSignUp.svg");
     background-size: cover;     
     background-position:top; 
     background-repeat: no-repeat;
@@ -85,7 +85,7 @@ p{
 	padding-left: 15px;
 }
 .chatBackG{
-    background-image: url("../toonie/img/chatBG.png");
+    background-image: url("img/chatBG.png");
     background-size: auto;  
     background-position:top; 
     background-repeat: no-repeat;
