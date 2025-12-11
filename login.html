@@ -91,21 +91,34 @@
         padding: 20px;
     }
 
-    .social {
-        width: 100%;
-        max-width: 450px;
-        margin: 12px auto;
-        padding: 16px;
-        border-radius: 14px;
-        border: none;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        justify-content: center;
-        font-size: 17px;
-        background: rgba(255,255,255,0.9);
-        cursor: pointer;
-    }
+    .btn-link {
+    display: block;
+    text-align: center;
+    background: #f3c73e;
+    color: black;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 17px;
+    text-decoration: none;
+}
+.social-link {
+    width: 100%;
+    max-width: 450px;
+    margin: 12px auto;
+    padding: 16px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+    font-size: 17px;
+    background: rgba(255,255,255,0.9);
+    text-decoration: none;
+    color: black;
+}
+
 
     @media (max-width: 480px) {
         .top-section { padding: 30px 15px 120px; border-bottom-left-radius: 80px; border-bottom-right-radius: 80px; }
@@ -150,7 +163,7 @@
             <!-- Link a la pantalla Forgot Password -->
             <a class="forgot" href="codigo.html">Forgot password?</a>
 
-            <button class="btn-login" type="submit">Login</button>
+             <a class="btn-link" href="../toonie/home.html">Login</a>
 
             <!-- Link a la pantalla Sign Up -->
             <p class="signup-text">
@@ -160,13 +173,13 @@
     </div>
 
     <div class="social-section">
-        <button class="social">
+        <a class="social-link" href="../toonie/home.html">
             <i class="fa-brands fa-google"></i> Login with Google
-        </button>
+        </a>
 
-        <button class="social">
+        <a class="social-link" href="../toonie/home.html">
             <i class="fa-brands fa-facebook"></i> Login with Facebook
-        </button>
+        </a>
     </div>
 
 </body>
