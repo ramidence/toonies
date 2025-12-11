@@ -8,11 +8,16 @@
     --yellow-color: #ECC039;
 }
 
+body{
+    overscroll-behavior-y: auto;
+}
+
 .bgSplash{
     background-color: var(--bg-color);
     padding: 420px 115px;
     
 }
+
 
 
 .signUp{
@@ -53,4 +58,291 @@ p{
 
 .containerbtnSign{
     margin-top: 100px;
+}
+
+
+
+/*Estilo del chatroom*/
+
+/*Barra superior*/
+.navSup{
+    background-color: #001F21;
+    padding: 12px;
+	padding-top: 20px;
+}
+.arrowback{
+    color: #DE4F15;
+	align-items: center;
+	padding-top: 10px;
+	font-size: 20px;
+}
+.nameUser{
+    color: #ffff;
+	padding-top: 5px;
+}
+.userImg{
+	height: 35px;
+	padding-left: 15px;
+}
+.chatBackG{
+    background-image: url("../toonie/img/chatBG.png");
+    background-size: auto;  
+    background-position:top; 
+    background-repeat: no-repeat;
+}
+
+#chat{
+	margin: 8px;
+	margin-bottom: 15px;	
+}
+
+.input{
+	margin: 10px 10px;
+	padding: 10px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	/*border-color: ;*/
+}
+input:focus{
+	outline: none;
+	color: #ffff;
+	caret-color: var(--yellow-color);
+}
+
+/*Donde esta el icono del usuario, el input y el boton de enviar.*/
+.barra{
+    padding: 2px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	background-color: var(--bg-color);
+	border-radius: 10px;
+}
+#talk{
+	width: 65%;
+	height: 4vh;
+	font-size: 14px;
+	border-width: 0;
+	padding: 5px;
+    background-color: var(--bg-color);
+}
+
+/*El espacio donde aparecen los mensajes de texto.*/
+.chatSpace{
+	height: 700px;
+	margin: 3px;
+	overflow-x: hidden;
+	overflow-y: auto; /*Todo el contenido va a estar dentro del tamaño de este espacio.*/
+	text-align: right; /*Porque solamente se va a ver los mensajes que enviamos.*/
+}
+.profileItems{
+	padding-right: 1vw;
+}
+
+/*Para alinear las columnas.*/
+#chatText{
+	display: grid;
+	justify-items: end;
+}
+#chatText div{
+	margin-top: 1vh;
+}
+#chatText div .said{
+	background-color: var(--secondary-color);
+	border-radius: 8px;
+	margin-left: 1vw;
+	padding: 8px 10px;
+	max-width: 79%; /*Ancho maximo de la caja de texto, puede variar dependiendo del tamaño de la pantalla del celular*/
+	color: #ffff;
+}
+
+/*iconos*/
+.fa{
+	font-size: 140%;
+}
+.fa-camera{
+	color: var(--secondary-color);
+	padding: 0px 5px;
+}
+.fa-microphone{
+	color: var(--yellow-color);
+	padding: 0px 8px;
+}
+
+.send{
+	font-size: 140%; /* Para que sea "responsive", pero puede ser un num. fijo. */
+	padding: 0px 2px; /*Mayor area para tocar el icono*/
+	color: var(--primary-color);
+}
+.send:active{
+	color: rgb(163, 93, 27);
+}
+
+/*Los tamaños de los elementos nuevos y las delimitaciones.*/
+.newItem{
+	margin-bottom: 5px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#userName{
+	font-size: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: grey;
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+
+
+/*chatList*/
+.boxContainer{
+	margin: 8px;
+}
+.chatBox{
+	padding: 8px 10px;
+	border-bottom: 2px solid var(--primary-color);
+	margin-bottom: 6px;
+}
+.chatUserImg{
+	padding-top: 8x;
+}
+.chatTextList{
+	padding: 6px 4px;
+}
+.userName{
+	
+	margin: 0px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #001F21;
+}
+.message{
+	color: #444444;
+	margin: 0px;
+	font-size: 14px;
+}
+.timeText{
+	color: #444444;
+	text-align: end;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+/*Barra de Busqueda ChatList*/
+#userSearch{
+	background-color: #001F21;
+}
+#searchBox{
+	border: 2px solid #029B99;
+	border-radius: 60px;
+	padding: 4px;
+}
+#basic-addon1{
+	background-color: #001F21;
+	border: none;
+}
+.fa-search-plus{
+	color: var(--primary-color);
+}
+.form-control::placeholder{
+	color: #029B99;
+}
+.form-control:focus{
+	color: #029B99;
+}
+
+/*menu*/
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 380px;
+    background: #062225;
+    padding: 15px 5px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+.nav-item .icon {
+    width: 32px;
+    height: 32px;
+}
+
+.nav-item .profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+a{
+	 text-decoration: none;
+}
+
+/*pull refresh*/
+.pull-to-refresh {
+  position:relative;
+  top: -60px;
+  width: 100%;
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+.pull-to-refresh.seen {
+  top: 0 !important; /* Alteracion de posicion */
+  height: 6vh !important; /* Altura de espacio cuando aparece Spinner */
+  transition: height 0.5s ease-in-out; /* Animacion de transicion de la altura modificada */
+}
+
+
+/*pantalla publicación*/
+.publicBG{
+	background-color: var(--bg-color);
+}
+.storyText{
+	padding-top: 6px;
+	padding-right: 25px;
+}
+.userPublic{
+	margin: 15px;
+}
+.btnCrear{
+	margin: 10px 5px;
+}
+.userPublicImg{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid #ffce54;
+}
+.userPublicText{
+	text-align: start;
+	padding-top: 18px;
+	font-weight: 500;
+	font-size: 18px;
+}
+.plusIcon{
+	padding-left: 10px;
+	padding-top: 20px;
+}
+.arrowR-Icon{
+	padding-top: 20px;
+	padding-left: 10px;
+
+}
+.btnCrearText{
+	text-align: start;
+	padding-top: 18px;
+}
+.publicStory{
+	margin: 2px 15px;
+}
+.comicCover{
+	border-radius: 4px;
+	height: 155px;
+	
 }

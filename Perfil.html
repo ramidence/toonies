@@ -1,0 +1,306 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile</title>
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app {
+    width: 412px; 
+    min-height: 100vh;
+    background: #062225;
+    overflow-y: auto;
+    position: relative;
+    color: white;
+}
+
+
+.header {
+    width: 100%;
+    height: 280px;
+    background-image: url('../toonie/img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.profile-circle {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffce54;
+    background-image: url('../toonie/img/foto.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.user-info {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.user-info h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.user-info p {
+    color: #cfcfcf;
+    margin: 5px 0;
+}
+
+
+.toonies {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid #ffce54;
+    padding: 6px 14px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+
+.edit-btn {
+    width: 55px;
+    height: 55px;
+    background: #ff6b1b;
+    border-radius: 50%;
+    position: absolute;
+    right: 25px;
+    top: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.edit-btn img {
+    width: 28px;
+}
+
+
+.tabs {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+}
+
+.tab {
+    width: 50%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    color: white;
+}
+
+.tab.active {
+    border-bottom: 3px solid #00e6d8;
+    color: #00e6d8;
+}
+
+
+.section {
+    padding: 20px;
+}
+
+.followers-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.person-list {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.person {
+    text-align: center;
+    color: white;
+    width: 90px;
+}
+
+.person img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 6px;
+}
+
+.fav-list {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+.fav-list img {
+    width: 150px;
+    border-radius: 12px;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 390px;
+    background: #062225;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.nav-item .icon {
+    width: 32px;
+    height: 32px;
+}
+
+.nav-item .profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+   
+    <div class="header">
+        <div class="back-btn">←</div>
+        <div class="menu-btn">⋮</div>
+        <div class="profile-circle"></div>
+    </div>
+
+ 
+    <div class="user-info">
+        <h2>Paulina</h2>
+        <p>@pauli._</p>
+        <div class="toonies">🪙 1 Toonies</div>
+    </div>
+
+
+    <div class="edit-btn">
+        <img src="../toonie/img/iconspencil.png">
+    </div>
+
+ 
+    <div class="tabs"> 
+        <div class="tab active">INFORMATION</div>
+        <a class="tab" href="community.html" style="text-decoration:none; color:white;">COMMUNITY</a>
+       
+    </div>
+
+  
+    <div class="section">
+
+        <div class="followers-title">Following</div>
+        <div class="person-list">
+            <div class="person">
+                <img src="../toonie/img/boris.jpg">
+                <div>Boris</div>
+            </div>
+
+            <div class="person">
+                <img src="../toonie/img/victoria.jpg">
+                <div>Victoria</div>
+            </div>
+
+            <div class="person">
+                <img src="../toonie/img/oscar.jpg">
+                <div>Oscar</div>
+            </div>
+
+            <div class="person">
+                <img src="../toonie/img/alice.jpg">
+                <div>Alice</div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="followers-title">Favorite</div>
+        <div class="fav-list">
+            <img src="../toonie/img/truebeauty.jpg">
+            <img src="../toonie/img/comic2.jpg">
+            <img src="../toonie/img/comic3.jpg">
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!--Menu Navegación-->
+
+        <nav class="bottom-nav">
+            <a href="../toonie/home.html" class="nav-item">
+                <img src="../toonie/img/iconshome.png" class="icon">
+            </a>
+
+            <a href="../toonie/chatList.html" class="nav-item">
+                <img src="../toonie/img/iconschat.png" class="icon">
+            </a>
+
+            <a href="../toonie/publicacion.html" class="nav-item">
+                <img src="../toonie/img/iconspencil.png" class="icon">
+            </a>
+
+            <a href="../toonie/Favoritos.html" class="nav-item">
+                <img src="../toonie/img/iconsheart.png" class="icon">
+            </a>
+
+            <a href="../toonie/Perfil.html" class="nav-item">
+                <img src="../toonie/img/foto.jpg" class="profile">
+            </a>
+        </nav>
+
+</body>
+</html>

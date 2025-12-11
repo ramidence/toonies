@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Favorites – Mobile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "Poppins", sans-serif;
+    }
+
+   
+    .phone {
+        width: 393px;      
+        height: auto;
+        min-height: 100vh;
+        background: #ffffff;
+        position: relative;
+        overflow-x: hidden;
+        box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    }
+
+    
+    .search-container {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 92%;
+        height: 42px;
+        background: #F5F5F5;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        border: 2px solid #d7d7d7;
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    
+    .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #0E2C2F;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+
+    .title img {
+        width: 22px;
+        margin-right: 8px;
+    }
+
+ 
+    .filters {
+        display: flex;
+        gap: 12px;
+        padding: 15px 20px;
+        overflow-x: auto;
+    }
+
+    
+    .filter-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .filter-btn img {
+        width: 95px;   
+        height: auto;
+        display: block;
+    }
+
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 10px 20px 120px;
+    }
+
+    .card {
+        width: 100%;
+        background: black;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        height: 150px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        color: white;
+        font-weight: 600;
+        font-size: 13px;
+        width: 90%;
+        text-shadow: 0 0 4px rgba(0,0,0,0.6);
+    }
+
+      .grid {
+        padding: 0 20px 90px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .item img {
+        width: 100%;
+        border-radius: 10px;
+        height: 140px;
+        object-fit: cover;
+    }
+
+    .item-title {
+        position: absolute;
+        bottom: 8px;
+        left: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 2px 6px rgba(0,0,0,0.8);
+    }
+
+   
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 393px;
+        height: 70px;
+        background: #062024;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navbar img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-profile {
+        width: 38px;
+        height: 38px;
+        border-radius: 999px;
+        object-fit: cover;
+    }
+
+    .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 412px;
+    background: #062225;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.nav-item .icon {
+    width: 28px;
+    opacity: 0.9;
+}
+
+.profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+    
+    <div class="search-container">
+        <div class="search-box">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Search Favorite">
+        </div>
+    </div>
+
+    
+    <div class="title">
+        <img src="../toonie/fotos/star.png">
+        Your Favorites
+    </div>
+
+<div class="filters">
+    <button class="filter-btn" onclick="filtrar('shonen')">
+        <img src="../toonie/fotos/filtro shonen.png" alt="Shonen">
+    </button>
+
+    <button class="filter-btn" onclick="filtrar('horror')">
+        <img src="../toonie/fotos/filtro horror.png" alt="Horror">
+    </button>
+
+    <button class="filter-btn" onclick="filtrar('adventure')">
+        <img src="../toonie/fotos/filtro adventure.png" alt="Adventure">
+    </button>
+</div>
+
+   
+    <div class="grid">
+
+        <div class="card">
+            <img src="../toonie/fotos/Vampiro.jpg">
+            <div class="card-title">Vampire Knight</div>
+        </div>
+        <div class="card">
+            <img src="../toonie/fotos/SUBZERO-COMP-SOLICIT-WEB.webp">
+            <div class="card-title">SubZero</div>
+        </div>
+        <div class="card">
+            <img src="../toonie/fotos/Sweet Home.webp">
+            <div class="card-title">Business Proposal</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/fiction.webp">
+            <div class="card-title">Fiction Fuse</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/limbo.jpg">
+            <div class="card-title">Limbo Hotel</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/monotone blue.jpg">
+            <div class="card-title">Monotone Blue</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/My Clueless Love Diary.jpg">
+            <div class="card-title">My clueless Love Diary</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/Necrobride.jpg">
+            <div class="card-title">Necrobride</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/shooting stars.jpg">
+            <div class="card-title">Shooting stars</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/True Beauty.jpg">
+            <div class="card-title">True Beauty</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/The Selfish Romance _ 이기적 연애론.jpg">
+            <div class="card-title">The Selfish Romance</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/summer.jpg">
+            <div class="card-title">Summer</div>
+        </div>
+ <div class="card">
+            <img src="fotos/Persona-5-Mementos-Mission-Cover-1.jpg">
+            <div class="card-title">Persona 5</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/Yuji-vol-1-cover.webp">
+            <div class="card-title">Jujutsu Kaisen</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/jojos-bizarre-adventure-part-4-diamond-is-unbreakable-vol-4-9781974708109_hr.jpg">
+            <div class="card-title">Jojos bizarre adventure</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/death-note-volume-12.avif">
+            <div class="card-title">Death note</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/Nana.jpg">
+            <div class="card-title">Nana</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/cm.webp">
+            <div class="card-title">Chainsaw man</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/naruto.webp">
+            <div class="card-title">Naruto</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/bleach.webp">
+            <div class="card-title">Bleach</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/sonic.webp">
+            <div class="card-title">SONIC</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/spider man venom.jpg">
+            <div class="card-title">The amazing spiderman</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/spiderman.jpg">
+            <div class="card-title">Spiderman</div>
+        </div>
+ <div class="card">
+            <img src="../toonie/fotos/Iron man.webp">
+            <div class="card-title">Iron man</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--Menu Navegación-->
+
+    <nav class="bottom-nav">
+        <a href="../toonie/home.html" class="nav-item">
+            <img src="../toonie/img/iconshome.png" class="icon">
+        </a>
+
+        <a href="../toonie/chatList.html" class="nav-item">
+            <img src="../toonie/img/iconschat.png" class="icon">
+        </a>
+
+        <a href="../toonie/publicacion.html" class="nav-item">
+            <img src="../toonie/img/iconspencil.png" class="icon">
+        </a>
+
+        <a href="../toonie/Favoritos.html" class="nav-item">
+            <img src="../toonie/img/iconsheart.png" class="icon">
+        </a>
+
+        <a href="../toonie/Perfil.html" class="nav-item">
+            <img src="../toonie/img/foto.jpg" class="profile">
+        </a>
+    </nav>
+
+</body>
+</html>

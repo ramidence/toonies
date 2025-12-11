@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<head>
+		<title>ChatRoom</title>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+	</head>
+
+<body class="chatBackG">
+
+
+    <!--Barra superior de chatroom-->
+    <section class="container navSup">
+
+        <div class="container text-center">
+            <div class="row align-items-start">
+
+                <div class="col-1">
+                <a href="../toonie/chatList.html"><i class="fa fa-long-arrow-left arrowback" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="col-1">
+                <img src="../toonie/img/userAlice.png" alt="" class="userImg">
+                </div>
+
+                <div class="col-4 ms-3 nameUser">
+                <p>Alice</p> 
+                </div>
+
+            </div>
+        </div>
+       
+    </section>
+
+
+
+	<section id="chat">
+
+        <div class="container chatSpace">
+            <div id="chatText">
+
+            </div>
+        </div>
+
+        
+
+
+        <div class="container barra">
+            <div class="row">
+                <form class="align-items-center">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                    <input type="text" name="tak" id="talk" aria-label="writingSpace" placeholder="Message">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                    <a class="send" id="send"><i class="fas fa-paper-plane"></i></a>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../toonie/js/ejChat.js"></script>
+<script type="text/javascript" src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

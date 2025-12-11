@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manga App</title>
+
+<!-- POPPINS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #d9d9d9; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+}
+
+.phone {
+    width: 393px; 
+    min-height: 100vh;
+    height: auto;
+    background: white;
+    position: relative;
+    overflow-x: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+
+.search-container {
+     padding: 15px;
+     display: flex;
+     justify-content: center;
+    }
+.search-bar {
+    margin: 15px;
+    background: #F5F5F5;
+    border-radius: 30px;
+    border: 2px solid #d7d7d7;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 42px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+}
+
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+.title img {
+        width: 22px;
+        margin-right: 8px;
+    }
+
+.carousel {
+    margin: 15px;
+    background: #ffe29a;
+    padding: 12px;
+    border-radius: 10px;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+}
+.carousel img {
+    width: 200px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.filters {
+    display: flex;
+    gap: 5px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    padding: 6px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 2px solid #e5e5e5;
+    background: white;
+    cursor: pointer;
+}
+.filter-btn.active {
+    background: #f9d56e;
+    border-color: #f9d56e;
+}
+
+
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    column-gap: 10px;
+    padding: 15px 50px 120px;
+}
+.manga-card img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.manga-card p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 412px;
+    background: #062225;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.nav-item .icon {
+    width: 28px;
+    opacity: 0.9;
+}
+
+.profile {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.big-carousel {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.big-carousel-track {
+    display: flex;
+    width: 300%;
+    animation: slideBig 12s infinite;
+}
+
+.big-carousel img {
+    width: 40%;
+    object-fit: cover;
+}
+
+
+@keyframes slideBig {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+
+    36% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+
+    69% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
+
+
+.favorite-section {
+    background: #DDB52B;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.favorite-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.favorite-title h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #003049;
+}
+
+.favorite-content {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.favorite-cover img {
+    width: 160px;
+    border-radius: 10px;
+    height: auto;
+}
+
+
+.favorite-right {
+    flex: 1;
+}
+
+
+.mini-carousel {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.mini-carousel-track {
+    display: flex;
+    width: 300%;
+    animation: slideMini 15s infinite;
+}
+
+.mini-carousel img {
+    width: 35%;
+    object-fit: cover;
+}
+
+
+@keyframes slideMini {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+
+    36% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+
+    69% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
+
+.favorite-desc {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+</style>
+</head>
+
+
+
+
+<body>
+
+
+<section class="pull-to-refresh">
+    <div class="spinner-border"></div>
+</section>
+
+<div class="phone">
+
+
+<div class="search-bar">
+    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
+    <input type="text" placeholder="Search Manga">
+</div>
+
+
+<div class="big-carousel">
+    <div class="big-carousel-track">
+        <img src="../toonie/fotos/banner  (1).jpg" alt="">
+        <img src="../toonie/fotos/banner  (3).jpg" alt="">
+        <img src="../toonie/fotos/banner  (2).jpg" alt="">
+    </div>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <img src="../toonie/fotos/star.png" width="24" height="24">
+    <div class="section-title">Today’s favorite!</div>
+</div>
+
+
+
+
+
+<div class="favorite-section">
+
+    <div class="favorite-content">
+
+        
+        <div class="favorite-cover">
+            <img src="../toonie/fotos/Necrobride.jpg" alt="">
+        </div>
+
+        
+        <div class="favorite-right">
+
+            
+            <div class="mini-carousel">
+                <div class="mini-carousel-track">
+                    <img src="../toonie/fotos/necrobride uno.jpg">
+                    <img src="../toonie/fotos/necrobride2.jpg">
+                    <img src="../toonie/MINI3.jpg">
+                </div>
+            </div>
+
+            
+            <p class="favorite-desc">
+                Hazel spent her life trying to please others, even preparing to marry a man she doesn't love.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px;" class="filters">
+    <button class="filter-btn active">Shonen</button>
+    <button class="filter-btn">Horror</button>
+    <button class="filter-btn">Adventure</button>
+    <button class="filter-btn">Romance</button>
+</div>
+
+
+
+<div class="manga-grid">
+    <div class="manga-card">
+        <img src="../toonie/fotos/Vampiro.jpg">
+        <p>Vampire Knight</p>
+    </div>
+
+    <div class="manga-card">
+        <img src="../toonie/fotos/SUBZERO-COMP-SOLICIT-WEB.webp">
+        <p>SubZero</p>
+    </div>
+
+    <div class="manga-card">
+        <img src="../toonie/fotos/Sweet Home.webp">
+        <p>Sweet Home</p>
+    </div>
+
+    <div class="manga-card">
+        <img src="../toonie/fotos/Business Proposal.jpg">
+        <p>Business Proposal</p>
+    </div>
+
+    <div class="manga-card">
+        <img src="../toonie/fotos/Necrobride.jpg">
+        <p>Necrobride</p>
+    </div>
+
+    <div class="manga-card">
+        <img src="../toonie/fotos/fiction.webp">
+        <p>Fiction Fuse</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/limbo.jpg">
+        <p>Limbo Hotel</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/monotone blue.jpg">
+        <p>Monotone Blue</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/shooting stars.jpg">
+        <p>Shooting Star</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/Yuji-vol-1-cover.webp">
+        <p>Jujutsu Kaisen</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/bleach.webp">
+        <p>Bleach</p>
+    </div>
+    
+    <div class="manga-card">
+        <img src="../toonie/fotos/Persona-5-Mementos-Mission-Cover-1.jpg">
+        <p>Persona 5</p>
+    </div>
+
+</div>
+
+
+    <!--Menu Navegación-->
+
+        <nav class="bottom-nav">
+            <a href="../toonie/home.html" class="nav-item">
+                <img src="../toonie/img/iconshome.png" class="icon">
+            </a>
+
+            <a href="../toonie/chatList.html" class="nav-item">
+                <img src="../toonie/img/iconschat.png" class="icon">
+            </a>
+
+            <a href="../toonie/publicacion.html" class="nav-item">
+                <img src="../toonie/img/iconspencil.png" class="icon">
+            </a>
+
+            <a href="../toonie/Favoritos.html" class="nav-item">
+                <img src="../toonie/img/iconsheart.png" class="icon">
+            </a>
+
+            <a href="../toonie/Perfil.html" class="nav-item">
+                <img src="../toonie/img/foto.jpg" class="profile">
+            </a>
+        </nav>
+
+<script>
+
+const buttons = document.querySelectorAll(".filter-btn");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+    });
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Community Screen</title>
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.app {
+    width: 412px; 
+    height: 100vh;
+    background: #062225;
+    overflow-y: auto;
+    position: relative;
+    color: white;
+}
+
+
+.header {
+    width: 100%;
+    height: 280px;
+    background-image: url('../toonie/img/fondo.jpg');
+    background-size: cover; 
+    background-position: center;
+    position: relative;
+}
+
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.profile-circle {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffce54;
+    background-image: url('../toonie/img/foto.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.user-info {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.user-info h2 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.user-info p {
+    color: #cfcfcf;
+    margin: 5px 0;
+}
+
+
+.toonies {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid #ffce54;
+    padding: 6px 14px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+
+.edit-btn {
+    width: 55px;
+    height: 55px;
+    background: #ff6b1b;
+    border-radius: 50%;
+    position: absolute;
+    right: 25px;
+    top: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.edit-btn img {
+    width: 28px;
+}
+
+
+.tabs {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.tab {
+    width: 50%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    border-bottom: 3px solid #00e6d8;
+    color: #00e6d8;
+}
+
+
+.publish-box {
+    width: 90%;
+    background: #073438;
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.publish-box img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.publish-box input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #cfcfcf;
+    font-size: 18px;
+}
+
+
+.post {
+    width: 90%;
+    background: #032123;
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+}
+
+.post-header img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.post-header h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.post p {
+    margin-left: 67px;
+    color: #dcdcdc;
+    font-size: 18px;
+}
+
+.reply-btn {
+    margin-left: 67px;
+    color: #00e6d8;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 412px;
+    height:50px ;
+    background: #062225;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.bottom-nav .icon {
+    width: 30px;
+    
+}
+
+.bottom-nav .profile {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+</style>
+
+</head>
+<body>
+
+<div class="app">
+
+  
+    <div class="header">
+        <div class="back-btn">←</div>
+        <div class="menu-btn">⋮</div>
+
+        <div class="profile-circle"></div>
+    </div>
+
+    <div class="user-info">
+        <h2>Paulina</h2>
+        <p>@pauli._</p>
+        <div class="toonies">🪙 1 Toonies</div>
+    </div>
+
+
+    <div class="edit-btn">
+        <img src="../toonie/img/iconspencil.png">
+    </div>
+
+
+    <div class="tabs">
+        <a class="tab" href="perfil.html" style="text-decoration:none; color:white;">INFORMATION</a>
+        <div class="tab active">COMMUNITY</div>
+    </div>
+
+    <div class="publish-box">
+        <img src="../toonie/img/foto.jpg">
+        <input type="text" placeholder="Publish a message">
+    </div>
+
+  
+    <div class="post">
+        <div class="post-header">
+            <img src="../toonie/img/alice.jpg">
+            <h3>Alice Publish a message</h3>
+        </div>
+        <p>Your hold comic is magical</p>
+        <div class="reply-btn">💬 Reply</div>
+    </div>
+
+    <div class="post">
+        <div class="post-header">
+            <img src="../toonie/img/oscar.jpg">
+            <h3>Oscar Publish a message</h3>
+        </div>
+        <p>Next chapter PLESSS!!</p>
+        <div class="reply-btn">💬 Reply</div>
+    </div>
+
+    <div class="post">
+        <div class="post-header">
+            <img src="../toonie/img/victoria.jpg">
+            <h3>Victoria Publish a message</h3>
+        </div>
+        <p>LOVE IT !!!</p>
+        <div class="reply-btn">💬 Reply</div>
+    </div>
+
+</div>
+
+
+<!--Menu Navegación-->
+
+        <nav class="bottom-nav">
+            <a href="../toonie/home.html" class="nav-item">
+                <img src="../toonie/img/iconshome.png" class="icon">
+            </a>
+
+            <a href="../toonie/chatList.html" class="nav-item">
+                <img src="../toonie/img/iconschat.png" class="icon">
+            </a>
+
+            <a href="../toonie/publicacion.html" class="nav-item">
+                <img src="../toonie/img/iconspencil.png" class="icon">
+            </a>
+
+            <a href="../toonie/Favoritos.html" class="nav-item">
+                <img src="../toonie/img/iconsheart.png" class="icon">
+            </a>
+
+            <a href="../toonie/Perfil.html" class="nav-item">
+                <img src="../toonie/img/foto.jpg" class="profile">
+            </a>
+        </nav>
+
+</body>
+</html>
