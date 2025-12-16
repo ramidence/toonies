@@ -8,6 +8,16 @@
     --yellow-color: #ECC039;
 }
 
+p{
+    color: #ffff;
+    margin: 0px;
+}
+
+a{
+	text-decoration: none !important;
+}
+
+
 body{
     overscroll-behavior-y: auto;
 }
@@ -17,9 +27,6 @@ body{
     padding: 420px 115px;
     
 }
-
-
-
 .signUp{
     background-color: #001F21;
     background-image: url("img/bgSignUp.svg");
@@ -31,12 +38,6 @@ body{
 .h1SignUp{
     color: #ECC039;
 }
-
-p{
-    color: #ffff;
-}
-
-
 .form-label{
     color: #ffff;
 }
@@ -59,6 +60,10 @@ p{
 .containerbtnSign{
     margin-top: 100px;
 }
+.containerSign{
+    margin: 5px 12px;
+    margin-top: 150px;
+}
 
 
 
@@ -69,6 +74,7 @@ p{
     background-color: #001F21;
     padding: 12px;
 	padding-top: 20px;
+	align-items: center;
 }
 .arrowback{
     color: #DE4F15;
@@ -230,26 +236,38 @@ input:focus{
 }
 
 /*Barra de Busqueda ChatList*/
-#userSearch{
-	background-color: #001F21;
+#searchBox .input-group {
+    background-color: transparent;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
 }
-#searchBox{
-	border: 2px solid #029B99;
-	border-radius: 60px;
-	padding: 4px;
+#searchBox .input-group-text {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50px 0 0 50px;
+    padding: 0 16px;
 }
-#basic-addon1{
-	background-color: #001F21;
-	border: none;
+#searchBox .input-group-text i {
+    color: #2dd4c4; /* light teal icon */
+    font-size: 16px;
 }
-.fa-search-plus{
-	color: var(--primary-color);
+#userSearch {
+    border: 2px solid #0a3f46;
+    border-left: none;
+    border-radius: 0 50px 50px 0;
+    padding: 10px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
 }
-.form-control::placeholder{
-	color: #029B99;
+#userSearch::placeholder {
+    color: var(--primary-color)
 }
-.form-control:focus{
-	color: #029B99;
+#userSearch:focus {
+    box-shadow: none;
+    outline: none;
 }
 
 /*menu*/
@@ -276,9 +294,6 @@ input:focus{
 }
 
 
-a{
-	 text-decoration: none;
-}
 
 /*pull refresh*/
 .pull-to-refresh {
@@ -346,3 +361,282 @@ a{
 	height: 155px;
 	
 }
+.textContainer-Public{
+    text-align: start;
+}
+
+
+
+/*Pantalla de Publicar*/
+.uploadBG{
+	background-color: var(--bg-color);
+}
+.imagenPortada{
+	border-radius: 4px;
+	height: 250px;
+	align-items: center;
+	margin: 30px 10px;
+}
+.labelText {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+#episodeInput{
+    background-color: #0bb3ad;
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 15px 20px;
+}
+#episodeInput::placeholder {
+    color: #e0ffff;
+}
+.uploadBox {
+    border-radius: 10px;
+    padding: 15px;
+    background-color: var(--primary-color);
+}
+.fileItem {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+}
+.fileInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.deleteIcon {
+    color: #ff5722;
+    cursor: pointer;
+}
+.addMoreFiles {
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.addMoreFiles i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+.btnUpload {
+    width: 100%;
+    background-color: #ff6a00;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 22px;
+}
+.btnUpload a{
+    color: #e0ffff;
+}
+.plusIconUpload{
+    margin-right: 8px;
+}
+
+.cover-container {
+    position: relative;
+    display: inline-block;
+}
+.imagenPortada {
+    width: 260px;
+    border-radius: 12px;
+}
+.pencilEdit {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+}
+
+/*Editar Publicacion*/
+.episodeTitle{
+    margin: 0px;
+    font-weight: bold;
+}
+.dateText{
+ margin: 0px;
+}
+.tooniesText{
+ color: var(--yellow-color);
+ margin: 0px;
+}
+.iconTrash{
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+  
+}
+.editEpList{
+    margin: 20px 8px;
+}
+.btnEdit{
+    text-align: center;
+    border: 2px solid #029B99;
+    padding: 2px 12px;
+    border-radius: 8px;
+}
+.btnEdit a{
+    color: #ffff;
+}
+.btnEdit:hover {
+   background-color: var(--primary-color);
+}
+
+.bannerBG{
+    background-color: #ffffff;
+    color: #001F21;
+    padding: 25px 10px;
+}
+.bannerBG p{
+    color: #001F21;
+    text-align: start;
+    
+}
+.coverBanner{
+    height: 220px;
+    margin-top: 22px;
+}
+.bannerTitle{
+  font-weight: bold;
+  font-size: 22px;
+}
+.editMode{
+    border: 2px solid #029B99;
+    border-radius: 20px;
+    margin-top: 0px;
+    padding:  2px;
+    margin-right: 60%;
+    margin-bottom: 16px;
+}
+.editMode p{
+    margin: 0px;
+    text-align: center;
+    color: var(--primary-color);
+}
+.textDesp{
+    font-weight: bold;
+    margin-bottom: 10px;;
+}
+.btnUploadEpisode{
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btnUploadEpisode:hover {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+.plusIconEdit{
+    margin-top: 15px;
+    margin-left: 50px;
+    height: 30px;
+}
+.btnUploadText{
+   margin: 15px 0px;
+   font-weight: bold;
+   font-size: 18px; 
+}
+.containerUpload{
+    margin: 8%;
+}
+
+/*Create Publication*/
+
+.labelsSection {
+    margin-top: 25px;
+}
+
+.labelsTitle {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor de etiquetas */
+.labelsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Estilo base de cada label */
+.label {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1.5px solid;
+    background: transparent;
+}
+
+/* Colores individuales */
+.fantasy {
+    color: #00c2b3;
+    border-color: #00c2b3;
+    margin: 0%;
+}
+.shonen {
+    color:  #ffd43b;
+    border-color: #ffd43b;
+}
+.romance {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+.drama {
+    color: #00c2b3;
+    border-color: #00c2b3;
+}
+.terror {
+    color: #ffd43b;
+    border-color: #ffd43b;
+}
+.webtoon {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+.comic {
+    color: #00c2b3;
+    border-color: #00c2b3;
+}
+.manga {
+    color: #ffd43b;
+    border-color: #ffd43b;
+}
+.horror {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.label.active {
+    background-color: currentColor;
+    
+}
+.label.active p{
+    color: #ffffff;
+
+}
+.textLabel p{
+   
+    margin-bottom: 0px;
+}
+

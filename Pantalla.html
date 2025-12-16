@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Detail</title>
+
+<!-- POPPINS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    padding: 0;
+    background: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Poppins", sans-serif;
+}
+
+/* PHONE */
+.phone {
+    width: 393px;
+    min-height: 100vh;
+    background: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+/* TOP BAR */
+.top-bar {
+    background: #062024;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.top-bar img {
+    width: 24px;
+}
+
+/* INFO SECTION */
+.info-section {
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.cover {
+    width: 130px;
+}
+
+.cover img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* RIGHT INFO */
+.info-right {
+    flex: 1;
+}
+
+.info-right h1 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+/* FAVORITE BUTTON */
+.favorite-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.favorite-btn img {
+    width: 120px; /* tamaño del PNG */
+}
+
+/* DESCRIPTION */
+.description-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.description-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* EPISODES */
+.episodes {
+    background: #062024;
+    color: white;
+    padding: 15px;
+}
+
+.episodes h2 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* EPISODE ITEM */
+.episode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.episode img {
+    width: 55px;
+    border-radius: 6px;
+}
+
+.episode-info {
+    flex: 1;
+    font-size: 13px;
+}
+
+.episode-info span {
+    display: block;
+    font-size: 12px;
+    color: #f9d56e;
+}
+
+.read-btn {
+    border: 1px solid #5ccad1;
+    background: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 393px;
+    height: 70px;
+    background: #062024;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.read-btn {
+    border: 1px solid #5ccad1;
+    background: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* CUANDO YA ESTÁ LEÍDO */
+.read-btn.read {
+    background: #f9d56e;
+    border-color: #f9d56e;
+    color: #062024;
+    font-weight: 500;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 412px;
+    background: #062225;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+.nav-item .profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+a{
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+   
+    <div class="top-bar">
+        <a href="#" onclick="history.back(); return false;">
+             <img src="fotos/fi-br-arrow-left.png">
+        </a>
+
+       
+        <img src="fotos/fi-br-share.png">
+    </div>
+
+    
+    <div class="info-section">
+
+        <div class="cover">
+            <img src="fotos/portada.png">
+        </div>
+
+        <div class="info-right">
+            <h1>EL CUARTO</h1>
+
+
+    <button class="favorite-btn" id="favoriteBtn" type="button">
+    <img src="fotos/Favorito.png" id="favoriteIcon" alt="Favorite">
+    </button>
+
+
+
+            <div class="description-title">Description</div>
+            <p class="description-text">
+                In disguise as her friend, Ha-ri shows up on a blind date to scare away her friend's prospective suitor.
+                However, plans go awry when he turns out to be Ha-ri's CEO and he makes a proposal.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="episodes">
+        <h2>18 Episodes</h2>
+
+        <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 18
+                <span>5 toonies or Ad</span>
+            </div>
+            <a href="Comic.html">
+            <button class="read-btn">Read</button>
+            </a>
+        </div>
+
+        <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 17
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 16
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 15
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 14
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 13
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 12
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 11
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 10
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 9
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 8
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 7
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+            </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 6
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 5
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 4
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 3
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 2
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+                <div class="episode">
+            <img src="fotos/Screenshot 2025-12-13 202700.png">
+            <div class="episode-info">
+                Episode 1
+                <span>5 toonies or Ad</span>
+            </div>
+            <button class="read-btn">Read</button>
+        </div>
+
+    </div>
+
+</div>
+
+<nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+        <img src="img/iconshome.png" class="icon">
+    </a>
+
+    <a href="chatList.html" class="nav-item">
+        <img src="img/iconschat.png" class="icon">
+    </a>
+
+    <a href="publicacion.html" class="nav-item">
+        <img src="img/iconspencil.png" class="icon">
+    </a>
+
+    <a href="Favoritos.html" class="nav-item">
+        <img src="img/iconsheart.png" class="icon">
+    </a>
+
+    <a href="Perfil.html" class="nav-item">
+        <img src="img/foto.jpg" class="profile">
+    </a>
+</nav>
+
+<script>
+const favBtn = document.getElementById("favoriteBtn");
+const favIcon = document.getElementById("favoriteIcon");
+
+let isFavorite = false;
+
+favBtn.addEventListener("click", () => {
+    isFavorite = !isFavorite;
+
+    if (isFavorite) {
+        favIcon.src = "fotos/Favorito color.png"; 
+    } else {
+        favIcon.src = "fotos/Favorito.png";       
+    }
+});
+
+
+const readButtons = document.querySelectorAll(".read-btn");
+
+readButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("read");
+    });
+});
+</script>
+
+</body>
+</html>

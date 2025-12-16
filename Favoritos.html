@@ -208,6 +208,53 @@
     object-fit: cover;
 }
 
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px;
+}
+
+.top-search {
+    display: flex;
+    align-items: center;
+
+    height: 39px;
+    padding: 0 14px;
+
+    border: 2px solid #029B99;
+    border-radius: 22px;
+    background: #fff;
+    flex: 1;
+}
+/* INPUT */
+.top-search input {
+    all: unset;
+    flex: 1;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+}
+/* ICONOS */
+.top-search .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.menu-dots {
+    width: 22px;
+    margin-left: 12px;
+}
+
+.search-icon img,
+.more-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+
 </style>
 </head>
 
@@ -216,18 +263,24 @@
 <div class="phone">
 
     
-    <div class="search-container">
-        <div class="search-box">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search-plus" aria-hidden="true"></i></span>
-            <input type="text" placeholder="Search Favorite">
+   <div class="search-wrapper">
+
+    <!-- BUSCADOR -->
+    <div class="top-search">
+        <div class="search-icon">
+            <img src="fotos/zoom.png">
         </div>
+
+        <input type="text" placeholder="Search Manga">
     </div>
 
-    
-    <div class="title">
-        <img src="fotos/star.png">
-        Your Favorites
+    <!-- MENÚ 3 PUNTITOS -->
+    <div class="more-icon">
+        <img src="fotos/tres.png">
     </div>
+
+</div>
+
 
 <div class="filters">
     <button class="filter-btn" onclick="filtrar('shonen')">
@@ -245,11 +298,13 @@
 
    
     <div class="grid">
-
+        <a href="Pantalla.html">
         <div class="card">
-            <img src="fotos/Vampiro.jpg">
-            <div class="card-title">Vampire Knight</div>
+            <img src="img/portadaElCuarto.png">
+            <div class="card-title">El Cuarto</div>
         </div>
+        </a>
+
         <div class="card">
             <img src="fotos/SUBZERO-COMP-SOLICIT-WEB.webp">
             <div class="card-title">SubZero</div>
